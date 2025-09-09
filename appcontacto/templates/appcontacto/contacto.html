@@ -1,0 +1,22 @@
+{% extends "apphome/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+   
+<h1 style="color: aliceblue;">Contáctanos</h1>
+    <!--
+    csrf_token es es una etiqueta especial de Django que protege los formularios 
+    contra un tipo de ataque llamado CSRF (Cross-Site Request Forgery), es decir, 
+    suplantación de solicitudes entre sitios.
+    -->
+    <form action="/contacto/respuesta_contacto/" method="POST">{% csrf_token %}
+        <p style="color: white;">Nombre: <input type="text" name="asunto" required="True"></p>
+        <p style="color: white;">Email: <input type="text" name="email" required="True"></p>
+        <p style="color: white;">Mensaje: <textarea name="mensaje" rows="10" cols="40" required="True"></textarea></p>
+        <button type="submit">Enviar</button>
+    </form>
+
+
+{% endblock %}  

@@ -1,0 +1,21 @@
+{% extends "apphome/base.html" %}
+{% load static %}
+{% block content %}
+    {% for i in servicio %}
+        <section class="page-section clearfix">
+            <div class="container">
+            <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{i.imagen.url}}" alt="" style="width: 50%;">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="width: 40%; margin: 2%;">
+                <h2 class="section-heading mb-4" style="background-color: rgb(18, 17, 17);">
+                    <span class="section-heading-lower">{{i.titulo}}</span>
+                    <span class="section-heading-upper" style="text-align: left;">{{i.contenido}}</span>
+                </h2>
+                </div>
+            </div>
+            </div>
+</section>     
+    {% endfor %}
+{% endblock %} 
+
+ 
